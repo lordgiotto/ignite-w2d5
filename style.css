@@ -3,11 +3,12 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: sans-serif;
 }
 
 .song-card {
   position: relative;
-  width: 250px;
+  width: 300px;
   height: 350px;
   border-radius: 10px;
   overflow: hidden;
@@ -30,6 +31,13 @@ body {
 .song-card:hover {
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.35);
 }
+.song-card:hover .song-card-info {
+  transform: translateX(100px);
+  opacity: 0;
+}
+.song-card:hover .song-card-play {
+  transform: translateX(0);
+}
 
 .song-card .song-card-image {
   width: 100%;
@@ -45,7 +53,7 @@ body {
   text-align: center;
   z-index: 5;
   padding: 5px 10px;
-  display: none;
+  transition: transform .2s, opacity .2s;
 }
 .song-card-artist {
   font-size: 1em;
@@ -78,6 +86,8 @@ body {
   background-color: #27ae60;
   border-radius: 50%;
   cursor: pointer;
+  transform: translateX(-60px);
+  transition: transform .2s;
 }
 .song-card-play:before {
   content: "";
